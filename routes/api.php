@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*
+/**
  * Path to api groups.
  */
-
 const GROUP_PATH = __DIR__ . '/api';
 
 /*
