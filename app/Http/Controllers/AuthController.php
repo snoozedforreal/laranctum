@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\AttemptRequest;
+use App\Http\Resources\User\UserResource;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,5 +39,19 @@ class AuthController extends Controller
         return response()->json([
             'token' => $token->plainTextToken
         ]);
+    }
+
+    /**
+     * Get current user.
+     *
+     * @param Request $request
+     * @return \App\Http\Resources\User\UserResource
+     */
+    public function user(Request $request)
+    {
+        // get current user
+        $user = $request->user();
+
+        return new UserResource($user);
     }
 }
