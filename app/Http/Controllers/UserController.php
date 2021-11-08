@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Filters\UserFilter as Filter;
 use App\Http\Requests\User\StoreRequest;
 use App\Http\Requests\User\UpdateRequest;
 use App\Http\Resources\User\UserCollection;
@@ -16,10 +17,10 @@ class UserController extends Controller
      *
      * @return \App\Http\Resources\User\UserCollection
      */
-    public function index()
+    public function index(Filter $filter)
     {
         // get users
-        $users = User::all();
+        $users = User::filter($filter)->get();
 
         return new UserCollection($users);
     }
