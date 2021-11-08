@@ -12,6 +12,9 @@ return [
     */
 
     'email' => 'email',
+    'first_name' => 'first name',
+    'last_name' => 'last name',
     'password' => 'password',
+    'username' => 'username',
 
 ];

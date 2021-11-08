@@ -32,3 +32,8 @@ const GROUP_PATH = __DIR__ . '/api';
  * @group auth
  */
 Route::prefix('auth')->group(GROUP_PATH . '/auth.php');
+
+/**
+ * @group users
+ */
+Route::prefix('users')->group(GROUP_PATH . '/users.php');
