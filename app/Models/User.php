@@ -30,4 +30,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    /**
+     * Create new token for this user.
+     *
+     * @param string|null $token_name
+     * @return \Laravel\Sanctum\NewAccessToken
+     */
+    public function newToken(string $token_name = null)
+    {
+        return $this->createToken($token_name ?? config('sanctum.token_name'));
+    }
 }
