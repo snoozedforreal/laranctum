@@ -1,9 +1,22 @@
 {
-    "name": "laravel/laravel",
+    "name": "hassanaitnacer/laranctum",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "The Laravel boilerplate for SPAs (single page applications) that use Sanctum package.",
+    "keywords": [
+        "laranctum",
+        "laravel",
+        "sanctum",
+        "spa"
+    ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Hassan Ait Nacer",
+            "email": "itshassannacer@gmail.com",
+            "homepage": "https://linktr.ee/itshassannacer",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
@@ -44,6 +57,10 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "setup-env": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate --ansi"
         ]
     },
