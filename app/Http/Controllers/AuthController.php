@@ -54,4 +54,20 @@ class AuthController extends Controller
 
         return new UserResource($user);
     }
+
+    /**
+     * Logout current user.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout(Request $request)
+    {
+        // get current user
+        $user = $request->user();
+
+        return response()->json([
+            'logged_out' => $user->currentAccessToken()->delete()
+        ]);
+    }
 }

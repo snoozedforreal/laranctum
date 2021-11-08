@@ -32,3 +32,6 @@ Route::post('/', [$controller, 'attempt'])
 
 Route::get('/', [$controller, 'user'])
     ->middleware(['auth:sanctum']);
+
+Route::delete('/', [$controller, 'logout'])
+    ->middleware(['auth:sanctum']);
