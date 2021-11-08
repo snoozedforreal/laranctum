@@ -29,3 +29,6 @@ Route::post('/', [$controller, 'attempt'])
 | users.
 |
 */
+
+Route::get('/', [$controller, 'user'])
+    ->middleware(['auth:sanctum']);
